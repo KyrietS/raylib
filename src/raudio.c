@@ -170,7 +170,7 @@ typedef struct tagBITMAPINFOHEADER {
 #define MINIAUDIO_IMPLEMENTATION
 //#define MA_DEBUG_OUTPUT
 #include "external/miniaudio.h"         // Audio device initialization and management
-#undef PlaySound                        // Win32 API: windows.h > mmsystem.h defines PlaySound macro
+#undef rl_PlaySound                        // Win32 API: windows.h > mmsystem.h defines PlaySound macro
 
 #include <stdlib.h>                     // Required for: malloc(), free()
 #include <stdio.h>                      // Required for: FILE, fopen(), fclose(), fread()
@@ -1017,7 +1017,7 @@ bool ExportWaveAsCode(Wave wave, const char *fileName)
 }
 
 // Play a sound
-void PlaySound(Sound sound)
+void rl_PlaySound(Sound sound)
 {
     PlayAudioBuffer(sound.stream.buffer);
 }
